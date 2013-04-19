@@ -1,6 +1,7 @@
 @layout('master')
 
 @section('content')
+	<h1 class="label label-info">Sinun viimeisimmät liitteet</h1>
 	
 	@if($pastes)
 		<ul class="pastes">

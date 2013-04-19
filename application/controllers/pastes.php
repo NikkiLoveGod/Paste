@@ -5,11 +5,15 @@ class Pastes_Controller extends Base_Controller {
 	public $restful = true;    
 
     /**
-     * List all pastes
+     * List all pastes from your session
      */
 	public function get_index()
     {
-        $pastes = Paste::order_by('updated_at', 'desc')->get();
+        $pastes = array();
+        $pasteIds = Session::get('pasteIds');
+        if($pasteIds) {
+            $pastes = Paste::where_in('id', $pasteIds)->order_by('updated_at', 'desc')->get();
+        }
         return View::make('paste.index')->with('pastes', $pastes);
     }    
 
@@ -109,6 +113,13 @@ class Pastes_Controller extends Base_Controller {
         if(!$paste) {
             return Redirect::to_route('new_paste')->with('message', 'Tallennuksessa tapahtui virhe');
         }
+
+        /**
+         * Store the pasteId into your session
+         */
+        $pasteIds = Session::get('pasteIds');
+        $pasteIds[] = $paste->id;
+        Session::put('pasteIds', $pasteIds);
 
         return Redirect::to_route('paste', array($paste->shortcode));
     }    
