@@ -1,0 +1,68 @@
+html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+body {
+	background: #333333;
+	width: 97%;
+	margin: 0 auto;
+	color: white;
+	font-size: 20px;
+	height: 100%;
+}
+
+textarea, pre {
+	border: 0;
+}
+
+header {
+	position: absolute;
+	width: 150px;
+	right: 5px;
+}
+
+form {
+	height: 100%;
+}
+
+.nav {
+	position: absolute;
+	top: 60px;
+	right: 10px;
+
+}
+
+.content {
+	padding-top: 1em;
+	height: 95%;
+}
+
+.message {
+	width: 70%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.pastebox {
+	width: 100%;
+	height: 100%;
+	outline: 0;
+	background: #333;
+	border-radius: 0;
+	color: #ddd;
+}
+
+.pastes {
+	width: 70%;
+	margin: 40px auto;
+}
+
+.pastes li {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.pastes li a {
+	width: 130px;
+}
