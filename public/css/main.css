@@ -33,6 +33,10 @@ form {
 
 }
 
+.nav a:before {
+	content: attr(data-content);
+}
+
 .content {
 	padding-top: 1em;
 	height: 95%;
