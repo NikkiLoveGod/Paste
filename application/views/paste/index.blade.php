@@ -15,7 +15,7 @@
 	
 
 	<div class="nav btn-group">
-		{{ HTML::link_to_route('new_paste', 'Uusi', null, array('class' => 'btn btn-mini btn-danger')) }}
+		{{ HTML::link_to_route('new_paste', 'Uusi', null, array('class' => 'btn btn-small btn-warning')) }}
 	</div>
 @endsection
 

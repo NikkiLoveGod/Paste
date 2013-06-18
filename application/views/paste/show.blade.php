@@ -10,8 +10,8 @@
 	<pre class="prettyprint linenums pastepre">{{ e($paste->content) }}</pre>
 
 	<div class="nav btn-group">
-		{{ HTML::link_to_route('new_paste', 'Uusi', null, array('class' => 'btn btn-mini btn-danger')) }}
-		{{ HTML::link_to_route('fork_paste', 'Muokkaa', array($paste->shortcode), array('class' => 'btn btn-mini btn-warning')) }}
+		{{ HTML::link_to_route('new_paste', 'Uusi', null, array('class' => 'btn btn-small btn-danger')) }}
+		{{ HTML::link_to_route('fork_paste', 'Muokkaa', array($paste->shortcode), array('class' => 'btn btn-small btn-warning')) }}
 	</div>
 @endsection
 

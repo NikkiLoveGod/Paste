@@ -19,7 +19,7 @@ textarea, pre {
 header {
 	position: absolute;
 	width: 150px;
-	right: 5px;
+	right: 10px;
 }
 
 form {
@@ -28,8 +28,8 @@ form {
 
 .nav {
 	position: absolute;
-	top: 60px;
-	right: 10px;
+	top: 22px;
+	right: 175px;
 
 }
 
@@ -38,7 +38,7 @@ form {
 }
 
 .content {
-	padding-top: 1em;
+	padding-top: 2.5em;
 	height: 95%;
 }
 
