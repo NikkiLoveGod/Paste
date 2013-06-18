@@ -9,6 +9,8 @@
 			{{ HTML::link_to_route('new_paste', 'Uusi', null, array('class' => 'btn btn-small btn-danger')) }}
 			{{ Form::submit('Tallenna', array('class' => 'btn btn-small btn-success')) }}
 		</div>
+
+		<div class="dz-previews"></div>
 	{{ Form::close() }}
 
 @endsection
@@ -17,7 +19,8 @@
 @section('scripts')
 	<script>
 		Dropzone.options.dropzone = {
-			url: '{{ URL::to_route("upload", $shortcode) }}'
+			url: '{{ URL::to_route("upload", $shortcode) }}',
+			previewsContainer: '.dz-previews'
 		}
 	</script>
 @endsection

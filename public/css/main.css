@@ -48,13 +48,75 @@ form {
 	visibility: hidden;
 }
 
-.dz-preview {
+.dz-previews {
 	position: absolute;
-	border: 1px solid white;
 	top: 0px;
-	left: 250px;
+	right: 320px;
+	overflow: hidden;
+}
+
+.dz-preview {
+	position: relative;
+	float: right;
+	margin-right: 10px;
+	overflow: hidden;
 	height: 50px;
-	width: 250px;
+	width: 60px;
+}
+
+.dz-preview div {
+	position: absolute;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.dz-filename {
+	top: 20px;
+}
+
+.dz-preview .dz-size {
+	font-size: 14px;
+	top: 31px;
+}
+
+.dz-details {
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.dz-details span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-shadow: 0px 0px 3px rgba(150, 150, 150, 1);
+
+}
+
+.dz-details img {
+	width: 100%;
+	display: none;
+}
+
+.dz-progress {
+	height: 10px;
+	top: 0px;
+	height: 8px;
+	width: 100%;
+}
+
+.dz-success-mark {
+	text-align: right;
+	width: 100%;
+	top: 32px;
+	color: lightgreen;
+}
+
+.dz-error-mark {
+	display: none;
+}
+
+.dz-error-message {
+	display: none;
 }
 
 .content {
