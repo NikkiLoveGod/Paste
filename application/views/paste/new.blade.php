@@ -1,7 +1,8 @@
 @layout('master')
 
 @section('content')
-	{{ Form::open('/') }}	
+	
+	{{ Form::open(URL::to_route('paste', $shortcode), 'POST', array('class' => 'dropzone', 'id' => 'dropzone' )) }}	
 		{{ Form::textarea('paste', Input::old('paste', $paste), array('class' => "pastebox", 'autofocus' => 'true' )) }}
 
 		<div class="nav btn-group">
@@ -9,4 +10,14 @@
 			{{ Form::submit('Tallenna', array('class' => 'btn btn-small btn-success')) }}
 		</div>
 	{{ Form::close() }}
+
+@endsection
+
+	
+@section('scripts')
+	<script>
+		Dropzone.options.dropzone = {
+			url: '{{ URL::to_route("upload", $shortcode) }}'
+		}
+	</script>
 @endsection

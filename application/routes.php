@@ -2,10 +2,11 @@
 
 // paste Resources
 Route::get('/', array('as' => 'pastes', 'uses' => 'pastes@index'));
-Route::get('(:any)', array('as' => 'paste', 'uses' => 'pastes@show'));
 Route::get('new', array('as' => 'new_paste', 'uses' => 'pastes@new'));
+Route::get('(:any)', array('as' => 'paste', 'uses' => 'pastes@show'));
 Route::get('(:any)/fork', array('as' => 'fork_paste', 'uses' => 'pastes@fork'));
-Route::post('/', 'pastes@create');
+Route::post('(:any)', 'pastes@create');
+Route::post('/upload/(:any)', array('as' => 'upload', 'uses' => 'pastes@upload'));
 
 /*
 |--------------------------------------------------------------------------

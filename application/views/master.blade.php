@@ -4,6 +4,12 @@
 	<title>G-Works Paste</title>
 	{{ HTML::style('css/bootstrap.css') }}
 	{{ HTML::style('css/main.css') }}
+	
+	{{ HTML::script('js/vendors/jquery.js') }}
+	{{ HTML::script('js/vendors/tabby.js') }}
+	{{ HTML::script('js/vendors/bootstrap.js') }}
+	{{ HTML::script('js/vendors/dropzone.js') }}
+	{{ HTML::script('js/main.js') }}
 	@yield('styles')
 </head>
 <body>
@@ -27,10 +33,6 @@
 		@yield('content')
 	</div>
 
-	{{ HTML::script('js/vendors/jquery.js') }}
-	{{ HTML::script('js/vendors/tabby.js') }}
-	{{ HTML::script('js/vendors/bootstrap.js') }}
-	{{ HTML::script('js/main.js') }}
 	@yield('scripts')
 </body>
 </html>

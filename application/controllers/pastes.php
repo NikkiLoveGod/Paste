@@ -62,20 +62,20 @@ class Pastes_Controller extends Base_Controller {
      */
     public function get_new($paste = '')
     {
-        return View::make('paste.new')->with('paste', $paste);
+        return View::make('paste.new')->with('shortcode', Paste::generateShortcode())->with('paste', $paste);
     }    
 
     /**
      * Handle creating a paste
      */
-	public function post_create()
+	public function post_create($shortcode)
     {
         /**
          * Form the data for paste
          */
         $data = array(
             'content' => trim(Input::get('paste')),
-            'shortcode' => Paste::generateShortcode()
+            'shortcode' => $shortcode
         );
 
         /**
@@ -123,5 +123,13 @@ class Pastes_Controller extends Base_Controller {
 
         return Redirect::to_route('paste', array($paste->shortcode));
     }    
+
+    public function post_upload($shortcode)
+    {
+        $path = path('storage') . 'files/' . $shortcode . '/';
+        $name = Input::file('file.name');
+
+        Input::upload('file', $path, $name);
+    }
 
 }

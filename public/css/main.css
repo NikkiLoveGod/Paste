@@ -37,8 +37,28 @@ form {
 	content: attr(data-content);
 }
 
+.dz-default {
+	position: absolute;
+	border: 1px solid white;
+	padding: 10px;
+	top: 10px;
+	left: 250px;
+	height: 10px;
+	width: 250px;
+	visibility: hidden;
+}
+
+.dz-preview {
+	position: absolute;
+	border: 1px solid white;
+	top: 0px;
+	left: 250px;
+	height: 50px;
+	width: 250px;
+}
+
 .content {
-	padding-top: 2.5em;
+	padding-top: 3em;
 	height: 95%;
 }
 
