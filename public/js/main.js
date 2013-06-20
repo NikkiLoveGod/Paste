@@ -5,5 +5,4 @@ jQuery(document).ready(function($) {
         $(this).attr('data-content', $(this).text())
                .text('');
     });
-
 });

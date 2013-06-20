@@ -20,7 +20,13 @@
 	<script>
 		Dropzone.options.dropzone = {
 			url: '{{ URL::to_route("upload", $shortcode) }}',
-			previewsContainer: '.dz-previews'
+			previewsContainer: '.dz-previews',
+			init: function() {
+				this.on("addedfile", function(file) { 
+					console.log(file)
+					$(file.previewElement).removeClass('dz-preview').wrap('<a href="files/{{ $shortcode }}/' + file.name + '" class="dz-preview btn btn-small btn-info" />');
+				});
+			}
 		}
 	</script>
 @endsection

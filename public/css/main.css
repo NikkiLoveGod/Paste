@@ -50,65 +50,53 @@ form {
 
 .dz-previews {
 	position: absolute;
-	top: 0px;
-	right: 320px;
+	top: 22px;
+	right: 310px;
 	overflow: hidden;
 }
 
 .dz-preview {
 	position: relative;
-	float: right;
-	margin-right: 10px;
 	overflow: hidden;
-	height: 50px;
-	width: 60px;
+	/*height: 50px;*/
+	/*width: 60px;*/
+	float: right;
+	margin-left: 5px;
+	margin-bottom: 5px;
 }
 
 .dz-preview div {
-	position: absolute;
-	font-size: 12px;
+	position: relative;
+	float: left;
 	overflow: hidden;
 }
 
-.dz-filename {
-	top: 20px;
+.dz-filename span {
+	max-width: 70px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 .dz-preview .dz-size {
-	font-size: 14px;
-	top: 31px;
-}
-
-.dz-details {
-	min-width: 100%;
-	min-height: 100%;
-}
+	margin-right: 5px;
+} 
 
 .dz-details span {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	text-shadow: 0px 0px 3px rgba(150, 150, 150, 1);
+}
 
+.dz-progress {
+
+}
+
+.dz-success-mark {
+	color: lightgreen;
 }
 
 .dz-details img {
 	width: 100%;
 	display: none;
-}
-
-.dz-progress {
-	height: 10px;
-	top: 0px;
-	height: 8px;
-	width: 100%;
-}
-
-.dz-success-mark {
-	text-align: right;
-	width: 100%;
-	top: 32px;
-	color: lightgreen;
 }
 
 .dz-error-mark {
