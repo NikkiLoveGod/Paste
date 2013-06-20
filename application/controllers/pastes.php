@@ -33,7 +33,13 @@ class Pastes_Controller extends Base_Controller {
             return Redirect::to_route('pastes')->with('message', 'Sivua ei löytynyt');
         }
 
-        return View::make('paste.show')->with('paste', $paste);
+        /**
+         * Load the files and filedetails for given shortcode
+         * Note: They are stored in storage/files/<shortcode>
+         */
+        $files = Paste::get_files($shortcode);
+
+        return View::make('paste.show')->with('paste', $paste)->with('files', $files);
     }     
 
     /**
@@ -102,7 +108,8 @@ class Pastes_Controller extends Base_Controller {
         if($validate->fails()) {
             return Redirect::to_route('new_paste')
                             ->with_input()
-                            ->with_errors($validate);
+                            ->with_errors($validate)
+                            ->with('shortcode', $shortcode);
         }
 
         $paste = Paste::create($data);
@@ -130,6 +137,8 @@ class Pastes_Controller extends Base_Controller {
         $name = Input::file('file.name');
 
         Input::upload('file', $path, $name);
+
+        echo $name . ' -> ' . $path;
     }
 
 }

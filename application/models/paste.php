@@ -22,4 +22,30 @@ class Paste extends Eloquent
 		return $hex;
 	}
 
+	public static function get_files($shortcode)
+	{
+	    $path = path('storage') . 'files/' . $shortcode;
+	    
+	    if(!is_dir($path)) {
+	    	return false;
+	    }
+
+        $folder = scandir($path);
+
+        foreach((array) $folder as $name) {
+            if(is_dir($name)) {
+                continue;
+            }
+
+            $file       = new stdClass;
+            $file->name = $name;
+            $file->size = get_file_size(filesize($path . '/' . $name));
+            $file->url  = URL::base() . '/files/' . $shortcode . '/' . $name;
+
+            $files[] = $file;
+        }
+
+	    return $files;
+	}
+
 }

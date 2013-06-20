@@ -593,6 +593,6 @@ function get_cli_option($option, $default = null)
  */
 function get_file_size($size)
 {
-	$units = array('Bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB');
-	return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2).' '.$units[$i];
+	$units = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB');
+	return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 0).' '.$units[$i];
 }

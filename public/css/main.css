@@ -77,11 +77,8 @@ form {
 	text-overflow: ellipsis;
 	display: inline-block;
 	white-space: nowrap;
-}
-
-.dz-preview .dz-size {
 	margin-right: 5px;
-} 
+}
 
 .dz-details span {
 }
@@ -92,6 +89,7 @@ form {
 
 .dz-success-mark {
 	color: lightgreen;
+	margin-left: 5px;
 }
 
 .dz-details img {
