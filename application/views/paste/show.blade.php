@@ -15,7 +15,7 @@
 	<div class="dz-previews">
 		@if( $files )
 		@foreach( $files as $file )
-			<a href="{{ $file->url }}" class="dz-preview btn btn-small btn-info">
+			<a href="{{ $file->url }}" class="dz-preview btn btn-small btn-info" target="_blank">
 				<div class="dz-processing dz-image-preview dz-success">  
 					<div class="dz-details">    
 						<div class="dz-filename">
