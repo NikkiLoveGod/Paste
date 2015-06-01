@@ -6,10 +6,10 @@
     RewriteEngine On
 
     # Redirect Trailing Slashes...
-    # RewriteRule ^(.*)/$ /dilaz/talovisio/$1 [L,R=301]
+    RewriteRule ^(.*)/$ /paste/public/$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ /nikkilovegod/paste/index.php [L]
+    RewriteRule ^ /paste/public/index.php [L]
 </IfModule>

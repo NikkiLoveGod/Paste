@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'url'             => 'http://dev.g-works.fi/nikkilovegod/paste',
+    'url'             => env('APP_URL', 'http://www.local/paste/public'),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
