@@ -12,10 +12,10 @@
 */
 
 
-Route::get('/', ['as' => 'paste.index', 'uses' => 'PasteController@create']);
+Route::get('/', ['as' => 'paste.home', 'uses' => 'PasteController@index']);
+Route::get('/create', ['as' => 'paste.create', 'uses' => 'PasteController@create']);
+Route::get('{paste}', ['as' => 'paste.read', 'uses' => 'PasteController@create']);
 
-Route::post('/', 'PasteController@store');
-
-Route::get('/create', 'PasteController@create');
+Route::post('/store', ['as' => 'paste.store', 'uses' => 'PasteController@store']);
 
 
